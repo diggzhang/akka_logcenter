@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import scala.io.StdIn
-import com.guanghe.routes.HttpRoute
+import com.guanghe.routes.Routes
 
 object LogCenter {
 
@@ -15,7 +15,7 @@ object LogCenter {
     // needed for the future flatMap/onComplete in the end
     implicit val executionContext = system.dispatcher
 
-    val httpRoute = new HttpRoute()
+    val httpRoute = new Routes()
 
     val bindingFuture = Http().bindAndHandle(httpRoute.route , "localhost", 8080)
 
