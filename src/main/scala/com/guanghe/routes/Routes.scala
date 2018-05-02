@@ -7,10 +7,12 @@ class Routes {
 
   private val healthCheckRoute: HealthCheckRoute = new HealthCheckRoute()
   private val eventsRoute: EventsRoute = new EventsRoute()
+  private val apiLogRoute = new ApiLogRoute()
 
   val route = cors() {
+    healthCheckRoute.route ~
     eventsRoute.route ~
-    healthCheckRoute.route
+    apiLogRoute.route
   }
 
 }
