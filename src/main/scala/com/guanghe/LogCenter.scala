@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import scala.io.StdIn
-import com.guanghe.routes.Routes
+import routes.Routes
 
 object LogCenter {
 
