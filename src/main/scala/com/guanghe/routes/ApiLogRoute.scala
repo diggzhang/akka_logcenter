@@ -15,6 +15,16 @@ class ApiLogRoute {
             }
           }
         }
+      } ~
+      pathPrefix("api" / "log") {
+        pathEndOrSingleSlash {
+          extractRequest {
+            request =>
+              {
+                complete(StatusCodes.NoContent)
+              }
+          }
+        }
       }
     }
 }
