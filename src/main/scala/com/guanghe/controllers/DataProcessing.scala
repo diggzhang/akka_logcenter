@@ -6,8 +6,12 @@ import akka.http.scaladsl.server.Directives._
 class DataProcessing {
 
   def dataProcessing(request: HttpRequest, apiName: String) = {
-    println(apiName)
-    complete(StatusCodes.NoContent)
+    entity(as[Array[Byte]]) {
+      entityByte => {
+        ungzip
+      }
+    }
   }
+
 
 }
